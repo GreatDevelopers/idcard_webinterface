@@ -4,14 +4,14 @@
 }
 body {
   font-size: 120%;
-  background: #F8F8FF;
+  background: rgb(24, 26, 27);
 }
 
 .header {
-  width: 30%;
+  width: 70%;
   margin: 50px auto 0px;
   color: white;
-  background: #5F9EA0;
+  background: rgb(55, 91, 92);
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
@@ -19,7 +19,7 @@ body {
   padding: 20px;
 }
 form, .content {
-  width: 30%;
+  width: 70%;
   margin: 0px auto;
   padding: 20px;
   border: 1px solid #B0C4DE;
