@@ -1,16 +1,13 @@
 <?php
-function getOutputTable($user_data)
-{?>
-<html><head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head><body><div class "container">
+function getOutputTable($user_data) {
+	include('config/config.php');
+?>
+<div class "container">
 
 <table class='.table'>
 		<tr>
 			<td colspan='2'>
-			<img src=<?php echo $user_data['image'] ;?>>
+			<img src=<?php echo $config['students_image_dir'] . $user_data['image'] ;?>>
 			</td>
 		</tr>
 		<tr>
@@ -60,6 +57,6 @@ if($user_data['dayScholer']){ echo 'Day Scholer';}else{ echo 'Hostler';}
 			<tr>
 			<td>URL </td>
 			<td><?php echo $user_data['qrUrl'];?></td>
-		</tr></table></div></body></html>
+		</tr></table></div>
 <?php }?>
 

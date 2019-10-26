@@ -47,7 +47,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18',NULL,'CSE',1,'shivcharanmt@gmail.com',NULL);
+INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18',NULL,'CSE',1,'shivcharanmt@gmail.com','example.png');
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,4 +102,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-26 16:06:57
+-- Dump completed on 2019-10-26 23:09:18

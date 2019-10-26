@@ -1,8 +1,8 @@
 <?php
 function getDatabaseConnection() {
-	include('config/config.php');
+	include('config/database.php');
 	// connect to the database
-	$db = new mysqli($config['database']['hostname'], $config['database']['username'], $config['database']['password'], $config['database']['database']);
+	$db = new mysqli($db_config['hostname'], $db_config['username'], $db_config['password'], $db_config['database']);
 	// Check connection
 	if ($db->connect_error) {
 	    echo '<div class="alert alert-danger"><strong>Something went wrong!</strong> Please try after some time or contact server-admin. </div>';
