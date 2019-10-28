@@ -34,9 +34,12 @@ CREATE TABLE `students` (
   `leavingDate` date DEFAULT NULL COMMENT 'purposed leaving date of student',
   `qrUrl` varchar(255) DEFAULT NULL COMMENT 'Url for QR code of information of student',
   `branch` varchar(255) NOT NULL COMMENT 'branch of student',
-  `dayScholer` tinyint(1) DEFAULT NULL COMMENT 'if true then student is dayscholer else hostler',
   `email` varchar(255) DEFAULT NULL COMMENT 'email of student',
   `image` longtext DEFAULT NULL COMMENT 'path to image',
+  `gender` varchar(6) NOT NULL,
+  `dob` date NOT NULL,
+  `dayScholar` tinyint(1) DEFAULT 1,
+  `fatherName` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -47,7 +50,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18',NULL,'CSE',1,'shivcharanmt@gmail.com','example.png');
+INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18','http://localhost/idcard_webinterface/index.php?crn=1715074','CSE','shivcharanmt@gmail.com','example.png','Male','2000-09-01',1,'Father Name');
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-26 23:09:18
+-- Dump completed on 2019-10-28 21:57:00
