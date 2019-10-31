@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
+if (!(isset($_SESSION['username']) and isset($_SESSION['sid']))) {
     $_SESSION['msg'] = "You must log in first";
     if (isset($_GET['crn'])) {
         header('location: login/login.php?crn=' . $_GET['crn']);
@@ -9,10 +9,12 @@ if (!isset($_SESSION['username'])) {
         header('location: login/login.php');
     }
 }
+include('database_functions.php');
 
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['username']);
+    unset($_SESSION['sid']);
     header("location: login/login.php");
 }
 ?>
@@ -36,7 +38,8 @@ if (isset($_GET['logout'])) {
 
 <div class="container">
     <!-- logged in user information -->
-    <?php if (isset($_SESSION['username'])) { ?>
+    <?php if (isset($_SESSION['username']) and isset($_SESSION['sid'])) {
+        if (checkSessionId($_SESSION['username'], $_SESSION['sid'])) { ?>
         <div class="card border-success mt-4">
           <div class="card-header bg-secondary">
             <div class="row">
@@ -45,7 +48,6 @@ if (isset($_GET['logout'])) {
             </div>
           </div>
           <?php if (isset($_GET['crn'])) {
-              include('database_functions.php');
               include('display_user_data.php');
               $user_data = getUserData($_GET['crn']);
               if ($user_data) {
@@ -56,13 +58,16 @@ if (isset($_GET['logout'])) {
                   include('crn_input_form.php');
               }
           }else {
-	      include('crn_input_form.php'); ?>
+              include('crn_input_form.php'); ?>
               <div class="card-footer text-right">
                 <button class="btn btn-primary"><a href="index.php?logout=1" style="color: red;">logout</a></button>
               </div>
           <?php } ?>
         </div>
-    <?php } ?>
+    <?php }else {
+           header('location: login/login.php');
+         }
+    } ?>
 </div>
 </body>
 </html>
