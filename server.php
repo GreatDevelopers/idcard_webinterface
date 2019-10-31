@@ -1,5 +1,6 @@
 <?php
 include('database_functions.php');
+
 session_start();
 
 // initializing variables
@@ -9,6 +10,17 @@ $errors = array();
 
 // connect to the database
 $db = getDatabaseConnection();
+
+// Check if user logged in
+if (isset($_SESSION['username']) and isset($_SESSION['sid'])) {
+	if (checkSessionId($_SESSION['username'], $_SESSION['sid'])) {
+		if (isset($_GET['crn'])) {
+			header('location: ../index.php?crn=' . $_GET['crn']);
+		}else {
+			header('location: ../index.php');
+		}
+	}
+}
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {

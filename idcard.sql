@@ -32,7 +32,6 @@ CREATE TABLE `students` (
   `mobileNo` int(10) DEFAULT NULL COMMENT 'mobile number of student',
   `admissionDate` date DEFAULT NULL COMMENT 'admission date of student',
   `leavingDate` date DEFAULT NULL COMMENT 'purposed leaving date of student',
-  `qrUrl` varchar(255) DEFAULT NULL COMMENT 'Url for QR code of information of student',
   `branch` varchar(255) NOT NULL COMMENT 'branch of student',
   `email` varchar(255) DEFAULT NULL COMMENT 'email of student',
   `image` longtext DEFAULT NULL COMMENT 'path to image',
@@ -51,7 +50,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18','http://localhost/idcard_webinterface/index.php?crn=1715074','CSE','shivcharanmt@gmail.com','example.png','Male','2000-09-01',1,'Father Name',1);
+INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18','CSE','shivcharanmt@gmail.com','example.png','Male','2000-09-01',1,'Father Name',1);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +93,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Benjamin','BALET','bbalet','benjamin.balet@gmail.com','bbalet',8,NULL,0,1,'2013-10-28','PNC0025','en',NULL,1,NULL,NULL,NULL,NULL),(2,'shiv','sharma','shiv','shivcharanmt@gmail.com','shiv',NULL,NULL,0,NULL,NULL,'','en',NULL,1,NULL,NULL,NULL,'1dea037d1b8f846c65aa0efed77c43a6f21eedfd');
+INSERT INTO `users` VALUES (1,'Benjamin','BALET','bbalet','benjamin.balet@gmail.com','bbalet',8,NULL,0,1,'2013-10-28','PNC0025','en',NULL,1,NULL,NULL,NULL,NULL),(2,'shiv','sharma','shiv','shivcharanmt@gmail.com','shiv',NULL,NULL,0,NULL,NULL,'','en',NULL,1,NULL,NULL,NULL,'38996360afb005b95d10f47eea71e198ed0962c5');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-31  8:57:21
+-- Dump completed on 2019-10-31  9:55:23

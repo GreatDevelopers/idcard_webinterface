@@ -100,7 +100,7 @@ function displayUserData($user_data) {
   <div class="row">
     <label class="col-0 text-right font-weight-bold">URL :</label>
     <div class="col-6">
-      <a href="<?php echo $user_data['qrUrl'];?>"><?php echo $user_data['qrUrl'];?></a>
+      <a href="<?php echo "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];?>"><?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];?></a>
     </div>
     <div class="col text-right">
       <button class="btn btn-primary"><a href="index.php?logout='1'" style="color: red;">logout</a></button>
