@@ -89,6 +89,10 @@ function displayUserData($user_data) {
     <div class="text-center">
       <img src = <?php echo $config['students_image_dir'] . $user_data['image'] ;?> width=200 class="pic">
       <br>Student's Photo
+      <br>
+      <div class="mt-5">
+        <?php if ($user_data['allowed']) {echo '<h3 class="text-success">Allow</h3>';}else {echo '<h3 class="text-danger">Disallow</h3>';}?>
+      </div>
     </div>
   </div>
 </div>

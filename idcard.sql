@@ -40,6 +40,7 @@ CREATE TABLE `students` (
   `dob` date NOT NULL,
   `dayScholar` tinyint(1) DEFAULT 1,
   `fatherName` varchar(255) NOT NULL,
+  `allowed` tinyint(1) DEFAULT 1,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -50,7 +51,7 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18','http://localhost/idcard_webinterface/index.php?crn=1715074','CSE','shivcharanmt@gmail.com','example.png','Male','2000-09-01',1,'Father Name');
+INSERT INTO `students` VALUES (1,'shiv','sharma',1715074,1706512,'ludhiana',1234567890,'2019-10-09','2019-11-18','http://localhost/idcard_webinterface/index.php?crn=1715074','CSE','shivcharanmt@gmail.com','example.png','Male','2000-09-01',1,'Father Name',1);
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,6 +81,7 @@ CREATE TABLE `users` (
   `random_hash` varchar(24) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Obfuscate public URLs',
   `user_properties` text COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Entity ID (eg. user id) to which the parameter is applied',
   `picture` blob DEFAULT NULL COMMENT 'Profile picture of user for tabular calendar',
+  `sid` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `organization` (`Department`),
   KEY `position` (`position`)
@@ -92,7 +94,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Benjamin','BALET','bbalet','benjamin.balet@gmail.com','bbalet',8,NULL,0,1,'2013-10-28','PNC0025','en',NULL,1,NULL,NULL,NULL),(2,'shiv','sharma','shiv','shivcharanmt@gmail.com','shiv',NULL,NULL,0,NULL,NULL,'','en',NULL,1,NULL,NULL,NULL);
+INSERT INTO `users` VALUES (1,'Benjamin','BALET','bbalet','benjamin.balet@gmail.com','bbalet',8,NULL,0,1,'2013-10-28','PNC0025','en',NULL,1,NULL,NULL,NULL,NULL),(2,'shiv','sharma','shiv','shivcharanmt@gmail.com','shiv',NULL,NULL,0,NULL,NULL,'','en',NULL,1,NULL,NULL,NULL,'1dea037d1b8f846c65aa0efed77c43a6f21eedfd');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -105,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-28 21:57:00
+-- Dump completed on 2019-10-31  8:57:21
